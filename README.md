@@ -2,13 +2,6 @@
 
 Cypress Simple Project . 
 
-[![Product Name Screen Shot][product-screenshot]](https://cypress.io)
-
-
-### Built With
-
-* [![nodejs][nodelj.org]][nodjs-url]
-* [![cypress][cypress.io]][cypress-url]
 
 
 ## Getting Started
@@ -60,7 +53,6 @@ Node.js 18.x, 20.x, 22.x and above.
 6. in Cypress app select E2E testing:
 <img src='./images/1.png'>
 
-
 7. and make Configure file:
 <img src='./images/2.png'>
 
@@ -68,7 +60,60 @@ Node.js 18.x, 20.x, 22.x and above.
 
 <img src='./images/3.png'>
 
+9. create new spec file :
+<img src='./images/4.png'>
 
+make Test-Scenario.cy.js:
+<img src='./images/5.png'>
 
-   
+10. in vscode open Test-Senario.cy.js write Tests and Save the file:
+
+   ```
+   describe('Open Signup Page and Login and Loguot', () => {  
+  it('passes', () => {  
+
+    cy.visit('/signUp/signup.html')
+    cy.wait(1000)
+    ////////////////////////////////////////////////////////////////////////////////
+
+    // SignUp New User
+    cy.get('#email').type('example@gmail.com')
+    cy.get('#firstname').type('test')
+    cy.get('#lastname').type('test')
+    cy.get('#birthdate').type('1990-01-01')
+    cy.get('#phone').type('09129649133')
+    cy.get('#password').type('test1')
+    cy.get('#password-confirm').type('test1')
+    cy.get('form').contains('Sign Up').click()
+    cy.url().should('include', 'login')
+    cy.wait(1000)
+    /////////////////////////////////////////////////////////////////////////////////
+
+    // Redirect to Login Page and Enter Email and Password
+    cy.get('#login-email').type('example@gmail.com')
+    cy.get('#login-password').type('test1')  
+    cy.get('form').contains('Log In').click()
+    cy.wait(1000)
+    /////////////////////////////////////////////////////////////////////////////////
+
+    // Verify successful login and redirect to dashboard
+    cy.url().should('include', '/dashboard/dashboard.html')  
+    cy.contains('Hello test!')
+    cy.contains('Welcome to Your ')
+    cy.contains('Sign Out')
+
+    cy.wait(1000)
+    cy.get('#sign-out-button').click() // Signout
+    cy.url().should('include', '/login')
+
+    })
+})
+  
+   ```
+      
+11. in Cypress Click on Test-Scenario.cy.js:
+
+<img src='./images/6.png'>
+and Tests Starting 
+<img src='./images/7.png'>
 
