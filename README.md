@@ -26,17 +26,17 @@ Node.js 18.x, 20.x, 22.x and above.
 ### Installation
 
 1. Make Automatade-Test Directory:
-   '''bash
+   ```bash
    mkdir Automatade-Test
-   '''
+   ```
     
-   '''bash
+   ```bash
    cd /Automatade-Test
-   '''
+   ```
  open Directory with vscode:
-   '''bash
+   ```bash
    code .
-   '''
+   ```
    
 2. in vscode terminal run this command:
    ```bash
@@ -55,8 +55,20 @@ Node.js 18.x, 20.x, 22.x and above.
 
    ```bash
    npx cypress open
+   ```
    
 6. in Cypress app select E2E testing:
 <img src='./images/1.png'>
-   ```
+
+
+7. and make Configure file:
+<img src='./images/2.png'>
+
+8. select Browsre for test:
+
+<img src='./images/3.png'>
+
+
+
+   
 
